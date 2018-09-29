@@ -1,4 +1,5 @@
-#testing
+
+# CLASSES START --
 class Animal:
     def _init_(self, age, predator)
     self.age = age
@@ -23,3 +24,5 @@ class LocalAnimal:
 #class Squirrel(LocalAnimal):
 #class Pigeons(LocalAnimal):
 #class Raccoon(LocalAnimal):
+
+## CLASSES END --
