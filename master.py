@@ -2,7 +2,7 @@
 class Animal:
     def _init_(self, age, predator)
     self.age = age
-    self.predator = 
+    self.predator = predator
 
 #class Lion(Animal):
 #class Monkey(Animal):
