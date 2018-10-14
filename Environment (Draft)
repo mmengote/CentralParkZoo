@@ -1,19 +1,33 @@
+#define global variables
+
+#water variables
+water_col = color(105,119,131) 
+water_stroke = color(160, 185, 186)
+#lawn variables
+lawn_col = color (90, 116, 82)
+rect_outline = 0
+#tree variables
+
+
 class Water(object):
     #initiate
-    def __init__(self, water_XPos, water_YPos,water_width, water_height, water_col):
+    def __init__(self, water_XPos, water_YPos,water_width, water_height, water_col, water_stroke):
         self.water_width = water_width
         self.water_XPos = water_XPos
         self.water_YPos = water_YPos
         self.water_height = water_height
         self.water_col = water_col
+        self.water_stroke = water_stroke
     #define key features
     def draw(self):
         fill(self.water_col)
+        #if class == Water: stroke == self.water_col 
         ellipse(self.water_XPos, self.water_YPos, self.water_width, self.water_height) 
+        stroke(water_stroke) 
     #define the actual water sources
-water1 = Water(10, 88, 450, 400, color(204, 229,255))
-water2 = Water(1000, 88, 400, 800, color(204,229,255))
-water3 = Water(500, 500, 195, 300, color(204,229,255))
+water1 = Water(10, 88, 450, 400, water_col, water_stroke)
+water2 = Water(1000, 88, 400, 800, water_col, water_stroke)
+water3 = Water(500, 500, 195, 300, water_col, water_stroke)
 
 class Trees(object): 
     #initiate
@@ -29,38 +43,47 @@ class Trees(object):
          ellipse(self.tree_XPos, self.tree_YPos, self.tree_width, self.tree_hgt)
 
     #first cluster 
-tree1 = Trees (250, 50, 80, 80, color(0, 51, 0))
+tree1 = Trees (250, 50, 20, 20, color(0, 51, 0))
 tree2 = Trees (50, 400, 40, 40, color(0, 51, 0))
 tree3 = Trees (290, 150, 40, 40, color(0, 51, 0))
-tree4 = Trees (290, 200, 70, 70, color(0, 51, 0))
+tree4 = Trees (290, 200, 50, 50, color(0, 51, 0))
 tree5 = Trees (300, 300, 40, 40, color(0, 51, 0))
-tree6 = Trees (200, 300, 70, 70, color(0, 51, 0))
+tree6 = Trees (200, 300, 30, 30, color(0, 51, 0))
+
+
 
 
 class Lawn(object):
-    def __init__(self, lawn_XPos, lawn_YPos, lawn_height, lawn_width, lawn_col):
+    #initialize
+    def __init__(self, lawn_XPos, lawn_YPos, lawn_height, lawn_width, lawn_col, rect_outline):
         self.lawn_XPos = lawn_XPos
         self.lawn_YPos = lawn_YPos 
         self.lawn_height = lawn_height
         self.lawn_width = lawn_width
         self.lawn_col = lawn_col
+        self.rect_outline= rect_outline
         
     def draw(self):
+    #define the shapes to draw
         fill(self.lawn_col)
-        rect(self.lawn_XPos, self.lawn_YPos, self.lawn_height, self.lawn_width)
-    
-lawn1 = Lawn(700, 500, 100, 500, color(102, 204, 0))
-lawn2 = Lawn(350, 100, 300, 100, color(102, 204, 0))
-lawn3 = Lawn(1100, 600, 150,100, color(102, 204, 0))
-lawn4 = Lawn(100, 700, 200, 70, color(102, 204, 0))
-lawn5 = Lawn(50, 500, 100, 20, color(102, 204, 0))
-lawn6 = Lawn(330, 330, 60, 50, color(102, 204, 0))
+        rect(self.lawn_XPos, self.lawn_YPos, self.lawn_height, self.lawn_width, self.rect_outline)
 
+    #define the different lawns
+lawn1 = Lawn(700, 500, 100, 500, lawn_col, 0)
+lawn2 = Lawn(350, 100, 300, 100, lawn_col, 0)
+lawn3 = Lawn(1100, 600, 150,100, lawn_col, 0)
+lawn4 = Lawn(100, 700, 200, 70, lawn_col, 0)
+lawn5 = Lawn(50, 500, 100, 20, lawn_col, 0)
+lawn6 = Lawn(330, 330, 60, 50, lawn_col, 0)
+
+
+#drawing
 def setup():
+    #canvas
     size(1280,800)
    
 def draw():
-    background(255)
+    background(136,151,128)
     #draw the water
     water1.draw()
     water2.draw()
@@ -79,3 +102,4 @@ def draw():
     lawn4.draw()
     lawn5.draw()
     lawn6.draw()
+    
