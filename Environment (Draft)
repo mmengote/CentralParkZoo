@@ -1,0 +1,81 @@
+class Water(object):
+    #initiate
+    def __init__(self, water_XPos, water_YPos,water_width, water_height, water_col):
+        self.water_width = water_width
+        self.water_XPos = water_XPos
+        self.water_YPos = water_YPos
+        self.water_height = water_height
+        self.water_col = water_col
+    #define key features
+    def draw(self):
+        fill(self.water_col)
+        ellipse(self.water_XPos, self.water_YPos, self.water_width, self.water_height) 
+    #define the actual water sources
+water1 = Water(10, 88, 450, 400, color(204, 229,255))
+water2 = Water(1000, 88, 400, 800, color(204,229,255))
+water3 = Water(500, 500, 195, 300, color(204,229,255))
+
+class Trees(object): 
+    #initiate
+     def __init__(self, tree_XPos, tree_YPos, tree_width, tree_hgt, tree_col):
+        self.tree_XPos = tree_XPos
+        self.tree_YPos = tree_YPos
+        self.tree_col = tree_col
+        self.tree_width = tree_width
+        self.tree_hgt = tree_hgt
+     #define key features to draw
+     def draw(self):
+         fill(self.tree_col)
+         ellipse(self.tree_XPos, self.tree_YPos, self.tree_width, self.tree_hgt)
+
+    #first cluster 
+tree1 = Trees (250, 50, 80, 80, color(0, 51, 0))
+tree2 = Trees (50, 400, 40, 40, color(0, 51, 0))
+tree3 = Trees (290, 150, 40, 40, color(0, 51, 0))
+tree4 = Trees (290, 200, 70, 70, color(0, 51, 0))
+tree5 = Trees (300, 300, 40, 40, color(0, 51, 0))
+tree6 = Trees (200, 300, 70, 70, color(0, 51, 0))
+
+
+class Lawn(object):
+    def __init__(self, lawn_XPos, lawn_YPos, lawn_height, lawn_width, lawn_col):
+        self.lawn_XPos = lawn_XPos
+        self.lawn_YPos = lawn_YPos 
+        self.lawn_height = lawn_height
+        self.lawn_width = lawn_width
+        self.lawn_col = lawn_col
+        
+    def draw(self):
+        fill(self.lawn_col)
+        rect(self.lawn_XPos, self.lawn_YPos, self.lawn_height, self.lawn_width)
+    
+lawn1 = Lawn(700, 500, 100, 500, color(102, 204, 0))
+lawn2 = Lawn(350, 100, 300, 100, color(102, 204, 0))
+lawn3 = Lawn(1100, 600, 150,100, color(102, 204, 0))
+lawn4 = Lawn(100, 700, 200, 70, color(102, 204, 0))
+lawn5 = Lawn(50, 500, 100, 20, color(102, 204, 0))
+lawn6 = Lawn(330, 330, 60, 50, color(102, 204, 0))
+
+def setup():
+    size(1280,800)
+   
+def draw():
+    background(255)
+    #draw the water
+    water1.draw()
+    water2.draw()
+    water3.draw() 
+    #draw first cluster tees
+    tree1.draw()
+    tree2.draw()
+    tree3.draw()
+    tree4.draw()
+    tree5.draw()
+    tree6.draw()
+    #draw lawn
+    lawn1.draw()
+    lawn2.draw()
+    lawn3.draw()
+    lawn4.draw()
+    lawn5.draw()
+    lawn6.draw()
