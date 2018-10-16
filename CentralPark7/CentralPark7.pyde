@@ -66,7 +66,7 @@ number_of_sloths = 2
 number_of_racoons = 15
 total_number_of_animals = number_of_zebras + number_of_monkeys + number_of_sloths + number_of_racoons 
 
-number_of_humans = 1
+number_of_humans = 2
  
 # class Animal():
     
@@ -82,30 +82,10 @@ number_of_humans = 1
        
      #def eat: 
   
-      
-    # def move(self):
-    #    print(str(self.animalid) + " is now moving.")
-    #    if self.energy <15:
-    #         print(str(self.animalid) + " is moving slow!")
-    #         print("That " + str(self.species) + " is " + str(self.age) + " years old.")
-    #    else: print("That " + str(self.species) + " is moving pretty fast!")  
-       
-     
 # class Zebra(Animal): 
 #       super(Zebra, self).__init__()
+        # zebraImg = loadImage('/Users/DSetton/Documents/Processing/CentralPark6/Images/zebra.jpg')
       
-      
-# class Zebra: 
-    
-    
-#     zebraImg = loadImage('/Users/DSetton/Documents/Processing/CentralPark6/Images/zebra.jpg')
-      
-      
-      
-      
-#      #will add more methods here for each of the animal classes rekated to position and memory, etc- to come!!
-#      #heading to water
-     
 # class Coyote(Animal):
 #     super(Coyote, self).__init__()
 
@@ -129,6 +109,22 @@ number_of_humans = 1
 #        self.hunger = hunger
 #        self.thirst = randint(0,10)
 
+# class Animal():
+#      def __init__(self, xPos, yPos, startSim=False):
+#         self.xPos = xPos
+#         self.yPos = yPos
+        
+#         self.startSim = startSim
+        
+#         self.hunger = random.randint(1,10)
+#         self.thirst = random.randint(1,10)
+#         # self.memory = memory 
+
+# class Racoon(Animal):
+#      super(Animal, self).__init__()
+    
+#      self.age = random.randint(1,20)
+#      self.speed = random.randint(5,10)
 
 class Racoon():
      def __init__(self, xPos, yPos, startSim=False):
@@ -145,6 +141,9 @@ class Racoon():
         # self.memory = memory 
         
         racoonVisionDist = 100 
+
+    
+      
         # if self.goal = "water":
         #     #perception
         #     if self.((water1_Xpos + water_width)/2) + racoonVisionDist <= self.xPos &  ((water1_Ypos + water_height)/2) + racoonVisionDist <= self.yPos:
@@ -152,17 +151,7 @@ class Racoon():
         #     elif: random direction
             
             #memory
-        
-        
-          # def move(self):
-    #    print(str(self.animalid) + " is now moving.")
-    #    if self.energy <15:
-    #         print(str(self.animalid) + " is moving slow!")
-    #         print("That " + str(self.species) + " is " + str(self.age) + " years old.")
-    #    else: print("That " + str(self.species) + " is moving pretty fast!")  
-       
-     
-       
+
      def move(self):     
         # self.direction = random.uniform(0, PI*2)
         return random.uniform(-10, 10), random.uniform(-10, 10)
@@ -172,7 +161,6 @@ class Racoon():
 #       else:
 #          self.speed = random(6,10)
     
-        
      def display(self):
         racoonImg = loadImage('/Users/DSetton/Documents/Processing/CentralPark6/Images/racoon.jpg')
         image(racoonImg, self.xPos, self.yPos, 50, 75)
@@ -191,12 +179,10 @@ class Racoon():
                 self.yPos = 0
         elif self.yPos <= 0:
                 self.yPos = yMax
-                
-
+            
      def beginSim(self):
         self.startSim = True
         
-       
      def eat(self):
           self.hunger = self.hunger -20
           
@@ -206,7 +192,6 @@ class Racoon():
              #    self.speed = 10
              # else: 
              #    self.speed = 15    
-             
 
 class Human: 
      def __init__(self, xPos, yPos, startSim=False):
@@ -419,7 +404,7 @@ def raccoonCatch():
                 toRemoveRacoon.append(r_i)
                 if h.racoonCaught > 3:
                     toRemoveHuman.append(w_i)
-                    babyHuman = Wolf(w.xPos + random.randint(-50, 50), w.yPos + random.randint(-50, 50), startSim=True)
+                    babyHuman = Racoon(w.xPos + random.randint(-50, 50), w.yPos + random.randint(-50, 50), startSim=True)
                     newHumans.append(babyHuman)
     for deceasedRacoon_i in sorted(toRemoveRacoon, reverse=True):
         racoonList.pop(deceasedBun_i)
